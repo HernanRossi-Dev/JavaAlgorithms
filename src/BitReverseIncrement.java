@@ -21,9 +21,6 @@ public class BitReverseIncrement {
         Ans.xor(ReverseOne);
         Carry = (BitSet)BitReverseCounter.clone();
         Carry.and(ReverseOne);
-        System.out.print("Carry is: ");
-        printBits(Carry);
-        System.out.print("");
         int setBitIndex =0;
         while(Carry.cardinality() != 0){
             setBitIndex = Carry.nextSetBit(0);
@@ -34,9 +31,6 @@ public class BitReverseIncrement {
             }else{
                 Carry.flip(setBitIndex-1);
             }
-            System.out.print("Carry is: ");
-            printBits(Carry);
-            System.out.print("");
             PrevAns = (BitSet) Ans.clone();
             PrevCarry = (BitSet) Carry.clone();
 
@@ -74,7 +68,7 @@ public class BitReverseIncrement {
 
     public static void main(String[] args) {
         BitReverseIncrement reverseBitCounter = new BitReverseIncrement(4);
-        for(int i =0; i< 3; i++) {
+        for(int i =0; i< 6; i++) {
             System.out.print("\n**** Incrementing\n");
             reverseBitCounter.incrementCounter();
         }
